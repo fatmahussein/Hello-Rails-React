@@ -7,8 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Message.create(content: 'Hello, how are you?')
-Message.create(content: 'Greetings from Rails!')
-Message.create(content: 'Welcome to our application.')
-Message.create(content: 'Hey there! Have a great day.')
-Message.create(content: 'Good to see you!')
+
+Greeting.create(text: 'Hello buddy')
+Greeting.create(text: 'Welcome')
+Greeting.create(text: 'Nice to meet you')
+Greeting.create(text: 'Glad to see you')
+Greeting.create(text: 'Have a good day')

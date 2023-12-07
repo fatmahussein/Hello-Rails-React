@@ -7,17 +7,16 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  database: greetings-database
-  user: postgres
-  password: root
-  port: 5432
 
 development:
   <<: *default
-  database: greetingsdatabase
-  user: postgres
+  database: hello_world_react_rails_dev
+  username: postgres
   password: root
+  host: localhost
   port: 5432
 
 # Warning: The database defined as "test" will be erased and
@@ -25,5 +24,12 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: greetingsdatabase_test
+  database: hello_world_react_rails_test
+  username: postgres
+  password: root
+  host: localhost
+  port: 5432
 
+production:
+  <<: *default
+  password: <%= ENV["HELLO_WORLD_REACT_RAILS_DATABASE_PASSWORD"] %>
