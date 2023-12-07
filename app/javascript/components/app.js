@@ -5,7 +5,7 @@ import Greeting from "./greeting";
 const App = () => {
   return (
     <Router>
-      <Route path="/" component={Greeting} />
+      <Route path="/" element={<Greeting />} />
     </Router>
   );
 }
